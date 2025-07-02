@@ -2,7 +2,11 @@ const mongoose = require("mongoose");
 
 
 const userSchema = mongoose.Schema({
-    fullname: String,
+    fullname:{
+        type:String,
+        minLength: 3,
+        trim : true,
+    },
     email: String,
     password: String,
     cart:{
@@ -14,7 +18,7 @@ const userSchema = mongoose.Schema({
         type: Array,
         default: []
     },
-    contact:number,
+    contact:Number,
     picture: String,
 });
 module.exports = mongoose.model("user",userSchema);
