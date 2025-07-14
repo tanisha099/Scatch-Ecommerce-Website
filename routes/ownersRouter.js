@@ -3,7 +3,7 @@ const router = express.Router();
 const ownerModel = require("../models/owners-model");
 
 router.get("/admin", function(req,res){
-      const success = '';
+      let success=req.flash("success")
     res.render("createproducts",{ success });
 });
 
